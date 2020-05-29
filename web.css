@@ -1,0 +1,592 @@
+/*
+* @Author: wanganqi
+* @Date:   2020-05-27 10:56:37
+* @Last Modified by:   wanganqi
+* @Last Modified time: 2020-05-29 13:53:33
+*/
+	<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	a {
+		text-decoration: none;
+	}
+	ul {
+		list-style-type: none;
+	}
+	.clear:after {
+		content: "";
+		display: block;
+		height: 0;
+		clear: both;
+	}
+ 	/*header部分*/
+ 	.container {
+ 		width: 1200px;
+    	margin: 0 auto;
+    	height: 101px;
+ 	}
+ 	.logo {
+ 		margin-top: 20px;
+ 		margin-left: 10px;
+ 		display: inline-block;
+    	float: left;
+    	font-size:40px;
+		font-family:Microsoft YaHei;
+		font-weight:bold;
+		color:rgba(0,164,255,1);
+		line-height: 50px;
+		text-align: center;
+		height: 50px;
+ 	}
+ 	.nav {
+ 		display: inline-block;
+ 	}
+ 	.nav li {
+ 		display: inline-block;
+ 		float: left;
+ 		margin-left: 35px;
+ 		margin-top: 30px;
+		padding-top: 3px;
+ 		text-align: center;
+ 	}
+ 	#first {
+ 		margin-left: 60px;
+ 	}
+ 	.nav a {
+ 		font-size:18px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(5,5,5,1);
+		text-align: center;
+		display: inline-block;
+		padding-bottom: 12px;
+ 	}
+	.nav a:hover {
+		border-bottom: 2px solid rgba(0,164,255,1);
+	}
+	.sousuo {
+		display: inline-block;
+		float: right;
+		margin-top: 30px;
+		height: 46px;
+	}
+	.form {
+		display: inline-block;
+	}
+	.form .search {
+		width: 361px;
+		height: 40px;
+		border: 1px solid blue;
+		float: left;
+	}
+	.form .submit {
+		width: 50px;
+		height: 42px;
+		border: 1px solid rgba(0,164,255,1);
+		background: rgba(0,164,255,1) url(./images/search.png) no-repeat center center;
+		cursor: pointer;
+		vertical-align: bottom;
+		float: left;
+	}
+	placeholder {
+		size:14px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(191,191,191,1);
+	}
+	#personal {
+		display: inline-block;
+		text-decoration: none;
+		text-align: center;
+		font-size:14px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(102,102,102,1);
+		margin-left: 31px;
+		margin-top: 10px;
+		float: right;
+	}
+	/*banner图部分*/
+	.banner {
+		height: 420px;
+		background: rgba(28,3,108,1);
+	}
+	.container2 {
+		width: 1200px;
+    	margin: 0 auto;
+    	background: url(./images/banner2.png) no-repeat;
+    	background-position: 30px 0px; 
+	}
+	.nav2 {
+		width: 190px;
+		height: 420px;
+		background: url(./images/课程明细背景@2x.png) no-repeat center center;
+	}
+	.first2 {
+		padding-top: 27px;
+	}
+	.link {
+		font-size:14px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:white;
+		line-height: 41px;
+	}
+	.link:hover {
+		color: rgba(0,180,255,1);
+	}
+	.middle {
+		background-color: rgba(243,245,247,1);
+	}
+	/*导航3*/
+	.container3 {
+		width: 1200px;
+		height: 60px;
+    	margin: 0 auto;
+    	background:rgba(255,255,255,1);
+		box-shadow:0px 2px 3px 0px rgba(118,118,118,0.2);
+		border-top: 8px solid rgba(243,245,247,1);
+	}
+	.nav3 {
+		display: inline-block;
+		width: 900px;
+	}
+	.nav3 li {
+		display: inline-block;
+		float: left;
+		width: 124px;
+		text-align: center;
+	}
+	.first3 {
+		margin-left: 7px;
+	}
+	.link2 {
+		display: inline-block;
+		margin-top: 22px;
+		text-align: center;
+		line-height: 16px;
+		font-size:16px;
+		font-family:Microsoft YaHei;
+		color: rgba(5, 5, 5, 1);
+		width: 124px;
+		border-right: 1px solid rgba(191,191,191,1);
+	}
+	#last1 {
+		border-right: 0;
+	}
+	.link2:hover {
+		font-size: 16px;
+		font-family: MicrosoftYaHei-Bold;
+		font-weight: bold;
+		color: rgba(0, 164, 255, 1);
+	}
+	.xiugai {
+		display: inline-block;
+		float: right;
+		margin-right: 61px;
+		margin-top: 20px;
+		font-size: 16px;
+		color: rgba(0, 164, 255, 1);
+	}
+	/*导航下的链接 精品推荐*/
+	.container4 {
+		width: 1200px;
+		height: 77px;
+    	margin: 0 auto;
+	}
+	.tuijian {
+		display: inline-block;
+		font-size:20px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(73,73,73,1);
+		line-height: 77px;
+	}
+	.chakan {
+		display: inline-block;
+		float: right;
+		line-height: 77px;
+		font-size:12px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(165,165,165,1);
+	}
+	/*精品推荐课程图*/
+	.container5 {
+		width: 1200px;
+		height: 556px;
+    	margin: 0 auto;
+	}
+	.pic {
+		display: inline-block;
+		width: 228px;
+	}
+	.pclass {
+		display: inline-block;
+		float: left;
+		width: 228px;
+		height: 155px;
+	}
+	.class1 {
+		float: left;
+		width: 228px;
+		height: 115px;
+		background-color: white;
+	}
+	.pic {
+		float: left;
+		margin-left: 15px;
+	}
+	.pic2 {
+		margin-top: 15px;
+	}
+	.pic.first {
+		margin-left: 0;
+	}
+	.jieshao {
+		display: inline-block;
+		width: 185px;
+		padding-top: 23px;
+		padding-left: 23px;
+		font-size:14px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(5,5,5,1);
+		line-height:20px;
+	}
+	.xuexi {
+		padding-top: 18px;
+		padding-left: 23px;
+		font-size:12px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(153, 153, 153, 1);
+	}
+	.gaoji {
+		color: rgba(255, 124, 45, 1);
+	}
+	.dot {
+		font-weight: bold;
+	}
+	/*前端工程师*/
+	.container6 {
+		width: 1200px;
+		height: 77px;
+    	margin: 0 auto;
+	}
+	.qianduan {
+		display: inline-block;
+		font-size:20px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(73,73,73,1);
+		line-height: 77px;
+	}
+	.level {
+		display: inline-block;
+		margin-left: 291px;
+	}
+	.link3 {
+		display: inline-block;
+		margin-left: 60px;
+		font-size:16px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color: rgba(134, 134, 134, 1);
+	}
+	.link3:hover {
+		color: rgba(0, 164, 255, 1);
+	}
+	.link3.first {
+		margin-left: 0;
+	}
+	.chakan {
+		display: inline-block;
+		float: right;
+		line-height: 77px;
+		font-size:12px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(165,165,165,1);
+	}
+	/*前端工程师下的课程图*/
+	.container7 {
+		width: 1200px;
+		height: 270px;
+    	margin: 0 auto;
+	}
+	.pic {
+		display: inline-block;
+		width: 228px;
+	}
+	.pclass {
+		display: inline-block;
+		float: left;
+		width: 228px;
+		height: 155px;
+	}
+	.class1 {
+		float: left;
+		width: 228px;
+		height: 115px;
+		background-color: white;
+	}
+	.pic {
+		float: left;
+		margin-left: 15px;
+	}
+	.pic.first {
+		margin-left: 0;
+	}
+	.jieshao {
+		display: inline-block;
+		width: 185px;
+		padding-top: 23px;
+		padding-left: 23px;
+		font-size:14px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(5,5,5,1);
+		line-height:20px;
+	}
+	.xuexi {
+		padding-top: 18px;
+		padding-left: 23px;
+		font-size:12px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(153, 153, 153, 1);
+	}
+	.xuexi1 {
+		padding-top: 38px;
+		padding-left: 23px;
+		font-size:12px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(153, 153, 153, 1);
+	}
+	.gaoji {
+		color: rgba(255, 124, 45, 1);
+	}
+	.dot {
+		font-weight: bold;
+	}
+	/*牛人推荐*/
+	.container8 {
+		width: 1200px;
+		height: 77px;
+    	margin: 0 auto;
+	}
+	.tuijian {
+		display: inline-block;
+		font-size:20px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(73,73,73,1);
+		line-height: 77px;
+	}
+	/*牛人推荐下的图*/
+	.container9 {
+		width: 1200px;
+		height: 320px;
+    	margin: 0 auto;
+	}
+	.pic3 {
+		display: inline-block;
+		float: left;
+		position: relative;
+		width:228px; 
+		height:320px;
+	}
+	#pic3f {
+		width: 471px;
+		height: 320px;
+	}
+	.teacher {
+		margin-left: 15px;
+	}
+	.wenzi1 {
+		color: white;
+		position: absolute;
+		top: 99px;
+		left: 25px;
+	}
+	.biye {
+		font-size: 30px;
+		font-family:Microsoft YaHei;
+		font-weight:bold;
+		color:rgba(249,225,3,1);
+	}
+	.zhuanshen {
+		font-size: 27px;
+		font-family:Microsoft YaHei;
+		color:rgba(255, 255, 255, 1);
+	}
+	.dianji {
+		display: inline-block;
+		margin-left: 3px;
+		margin-top: 12px;
+		font-size:13px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(249,225,3,1);
+		line-height:24px;
+		text-align: center;
+		width: 86px;
+		height: 24px;
+		border: 1px solid rgba(249,225,3,1);
+	}
+	.wenzi2 {
+		width: 228px;
+		height: 122px;
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		bottom: 0;
+	}
+	.wenzi2 p {
+		width: 175px;
+		height: 90px;
+		margin-top: 21px;
+		margin-left: 29px;
+	}
+	.laoshi {
+		font-size:18px;
+		font-family:Microsoft YaHei;
+		font-weight:bold;
+		color: rgba(255,255,255,1);
+	}
+	.zhuanye {
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		color: rgba(255,255,255,1);
+	}
+	.jieshao1 {
+		display: inline-block;
+		margin-top: 12px;
+		font-size: 12px;
+		font-family: Microsoft YaHei;
+		color: rgba(255,255,255,1);
+	}
+	/*页脚*/
+	.bottom {
+		background-color: white;
+	}
+	.container10 {
+		width: 1200px;
+    	margin: 0 auto;
+	}
+	.zaixian {
+		display: inline-block;
+		float: left;
+		width: 472px;
+		height: 420px;
+	}
+	.xueli {
+		margin-top: 124px;
+		font-size:36px;
+		font-family:Microsoft YaHei;
+		font-weight:bold;
+		color:rgba(0,164,255,1);
+	}
+	.zhili {
+		margin-top: 35px;
+		font-size:12px;
+		font-family:SimSun;
+		font-weight:400;
+		color:rgba(102,102,102,1);
+	}
+	.xiazai {
+		display: inline-block;
+		margin-top: 33px;
+		font-size:16px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(0,164,255,1);
+		line-height: 36px;
+		text-align: center;
+		width: 119px;
+		height: 35px;
+		border: 1px solid rgba(0,164,255,1);
+	}
+	.guan {
+		display: inline-block;
+		float: left;
+		width: 340px;
+		height: 420px;
+	}
+	.guanyu {
+		margin-left: 191px;
+		margin-top: 133px;
+		font-size:16px;
+	}
+	.guanyu a {
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+		line-height:21px;
+	}
+	.links1 {
+		margin-left: 191px;
+		margin-top: 15px;
+	}
+	.links1 a {
+		font-size:12px;
+		font-family:SimSun;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+	}
+	.xin {
+		display: inline-block;
+		float: left;
+		width: 243px;
+		height: 420px;
+	}
+	.xinshou {
+		margin-left: 81px;
+		margin-top: 133px;
+	}
+	.xinshou a {
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+		line-height:21px;
+	}
+	.links2 {
+		margin-left: 81px;
+		margin-top: 15px;
+	}
+	.links2 a {
+		font-size:12px;
+		font-family:SimSun;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+	}	
+	.he {
+		display: inline-block;
+		float: left;
+		width: 140px;
+		height: 420px;
+	}
+	.hezuo {
+		margin-left: 55px;
+		margin-top: 133px;
+	}
+	.hezuo a {
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+		line-height:21px;
+	}
+	.links3 {
+		margin-left: 55px;
+		margin-top: 15px;
+	}
+	.links3 a {
+		font-size:12px;
+		font-family:SimSun;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+	}
+	</style>
